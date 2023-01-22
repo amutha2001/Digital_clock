@@ -1,0 +1,200 @@
+<!docutype html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital clock</title>
+	<link rel="stylesheet" href="digital.css">
+</head>
+<body>
+    <section>
+	    <div class="box-1">
+		    <div class="box-2">
+			    <div class="box-3">
+					<div class="date">
+					    <div class="head">
+						    <div>
+							  <h2>DATE</h2>
+						    </div>
+							<div>
+							   <h2>MONTH</h2>
+							</div>
+							<div>
+							  <h2>YEAR</h2>
+							</div>
+					    </div>
+						<div class="calender">
+						     <span id="date"></span>
+						     <span id="month"></span>
+						     <span id="year"></span>
+						</div>
+					</div>
+					<div class="hours">
+					    <div class="head">
+							<h2>HOURS</h2>
+							<h2>MINUTES</h2>
+							<h2>SECONDS</h2>
+					    </div>
+						<div class="clock">
+						    
+						     <span id="hour"></span>
+						     <span id="min"></span>
+						     <span id="sec"></span>
+						</div>
+					</div>
+					<div class="radio">
+						<div class="sun">
+						   <div class="color" id="sun">
+						    </div>
+						
+						</div>
+						<span class="day" >sun</span>
+						<div class="sun">
+						    <div class="color" id="mon">
+						    </div>
+							
+						</div>
+						<span class="day" >mon</span>
+						<div class="sun">
+						    <div class="color" id="tues">
+						    </div>
+						</div>
+						<span class="day" >tues</span>
+						<div class="sun">
+						   <div class="color" id="wed">
+						   </div>
+						   
+						</div>
+						<span class="day" >wed</span>
+						<div class="sun">
+						   <div class="color" id="thurs">
+						    </div>
+							
+						</div>
+						<span class="day" >thus</span>
+						<div class="sun">
+						   <div class="color" id="fri">
+						    </div>
+							 
+						</div>
+						<span class="day" >fri</span>
+						<div class="sun">
+						    <div class="color" id="sat">
+						         
+						    </div>
+							
+						</div>
+						<span class="day" >sat</span>
+					</div>
+					<div class="time">
+					    <div class="am">
+						    <div class="color1" id="mor">
+						    </div>
+						</div>
+						<span class="day" >am</span>
+					</div>
+				    
+					<div class="time">
+						<div class="am">
+						    <div class="color1" id="eve">
+						        
+						    </div>
+						</div>
+							 <span class="day" >pm</span>
+						
+					</div>
+		        </div>
+				
+		    </div> 
+		</div>
+	</section>
+    <script>
+	     
+	    function updateTime(){
+		    var now=new Date(),
+			  hours=now.getHours();
+			  var tim=document.getElementById("mor");
+			  var ele=document.getElementById("eve");
+			  if(hours<12){
+			       tim.style.backgroundColor="red";
+				  }
+			   else{
+			      ele.style.backgroundColor="red";
+				   }
+			  
+			  minute=now.getMinutes(),
+			  sec=now.getSeconds(),
+			  secEle=document.getElementById("sec");
+			  hourEle=document.getElementById("hour");
+			  minEle=document.getElementById("min");
+			  
+			 secEle.innerText=sec;
+			 hourEle.innerText=hours+"   :";
+			 minEle.innerText=minute+"     :";
+			 
+			 secEle.style.color="red";
+			 hourEle.style.color="red";
+			 minEle.style.color="red";
+			
+			 }
+			 updateTime();
+			 setInterval(updateTime,1000);
+			 
+			 
+	    function calender(){
+		    var calen=new Date(),
+			dat=calen.getDate(),
+			mon=calen.getMonth()+""+1,
+			yea=calen.getFullYear(23),
+			
+			datEle=document.getElementById("date");
+			monEle=document.getElementById("month");
+			yeaEle=document.getElementById("year");
+			
+			datEle.innerText=dat;
+			monEle.innerText=mon;
+			yeaEle.innerText=yea;
+			
+			datEle.style.color="red";
+			monEle.style.color="red";
+			yeaEle.style.color="red";
+		   }
+		   calender();
+		    
+		   function Days(){
+		         var d1=new Date();
+				 var d2=d1.getDay();
+				 if(d2==0){
+		         day1=document.getElementById("sun")
+				 day1.style.backgroundColor="red";
+		         } 
+				 else if(d2==1){
+		         day2=document.getElementById("mon")
+				 day2.style.backgroundColor="red";
+		         }
+                 else if(d2==2){
+		         day3=document.getElementById("sun")
+				 day3.style.backgroundColor="red";
+		         } 
+                 else if(d2==3){
+		         day4=document.getElementById("sun")
+				 day4.style.backgroundColor="red";
+		         } 				 
+			     else if(d2==4){
+		         day5=document.getElementById("sun")
+				 day5.style.backgroundColor="red";
+		         }
+                 else if(d2==5){
+		         day1=document.getElementById("sun")
+				 day1.style.backgroundColor="red";
+		         } 
+                 else if(d2==6){
+		         day1=document.getElementById("sun")
+				 day1.style.backgroundColor="red";
+		         } 
+		      } 
+			  
+			  Days()
+	</script>
+</body>
+</html>
