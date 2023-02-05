@@ -145,7 +145,8 @@
 		    var calen=new Date(),
 			dat=calen.getDate(),
 			mon=calen.getMonth()+""+1,
-			yea=calen.getFullYear(23),
+			yea=calen.getYear(),
+			y=yea-100;
 			
 			datEle=document.getElementById("date");
 			monEle=document.getElementById("month");
@@ -153,7 +154,7 @@
 			
 			datEle.innerText=dat;
 			monEle.innerText=mon;
-			yeaEle.innerText=yea;
+			yeaEle.innerText=y;
 			
 			datEle.style.color="red";
 			monEle.style.color="red";
